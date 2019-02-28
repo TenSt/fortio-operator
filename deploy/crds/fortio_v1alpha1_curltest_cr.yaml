@@ -3,5 +3,4 @@ kind: CurlTest
 metadata:
   name: example-curltest
 spec:
-  # Add fields here
-  size: 3
+  url: "https://verf.io"

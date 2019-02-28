@@ -13,6 +13,7 @@ type CurlTestSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "operator-sdk generate k8s" to regenerate code after modifying this file
 	// Add custom validation using kubebuilder tags: https://book.kubebuilder.io/beyond_basics/generating_crd.html
+	URL string `json:"url"`
 }
 
 // CurlTestStatus defines the observed state of CurlTest
@@ -21,6 +22,13 @@ type CurlTestStatus struct {
 	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
 	// Important: Run "operator-sdk generate k8s" to regenerate code after modifying this file
 	// Add custom validation using kubebuilder tags: https://book.kubebuilder.io/beyond_basics/generating_crd.html
+	Condition CurlTestCondition `json:"condition"`
+}
+
+// CurlTestCondition defines one item of Condition in CurlTestStatus
+type CurlTestCondition struct {
+	Result string `json:"result"`
+	Error  string `json:"error"`
 }
 
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

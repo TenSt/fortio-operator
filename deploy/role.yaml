@@ -44,3 +44,9 @@ rules:
   - '*'
   verbs:
   - '*'
+ - apiGroups:
+  - batch
+  resources:
+  - jobs
+  verbs:
+  - '*'
